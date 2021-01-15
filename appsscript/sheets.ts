@@ -1,4 +1,7 @@
 
+// ----------------------------------------------------------------------------
+// Written by Tak
+
 function hoursToString(hours: number)
 {
   let hour = Math.floor(hours)
@@ -28,3 +31,4 @@ function forEachRow(spreadsheetId: string, sheetname: string, context, callback)
     callback(values[i],context)
   }
 }
+// ----------------------------------------------------------------------------

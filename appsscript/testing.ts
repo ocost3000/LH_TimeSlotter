@@ -1,3 +1,4 @@
+import { config } from "process"
 
 function testTimeSlot()
 {
@@ -9,7 +10,8 @@ function testTimeSlot()
 }
 
 function generateTestValues() {
-  const form = FormApp.openById('1stnOcklDhngus8_aXodYVye9spkHZOTtZaDHpEmXp5s');
+  // Paste the id for whatever form you want test values
+  const form = FormApp.openById('1y1V_82ismr4FY4n00ulFCJIoMTspccQjpviBfW7BPO4');
   let questions = form.getItems();
   let wID_res = questions[0].asTextItem();
   let avail_res = questions[1].asCheckboxItem();
@@ -36,4 +38,19 @@ function generateTestValues() {
   for (let i = 0; i < 6; i++) {
     responses[i].submit();
   }
+}
+
+function checkConstraints() {
+  Logger.log(`Number of slots: ${num_slots}`);
+  Logger.log(`Maximum slots: ${max_slots}`);
+  Logger.log(`Minimum slots: ${min_slots}`);
+}
+
+function userClicked() {
+  Logger.log(`Button Clicked!`);
+}
+
+function testWebAppPipeline() {
+  const outcome = getNumConfigs("17NooBDh3wGDWTcpDFhfXE5NgEMQ0lztjhTyo3Kp0NMw");
+  Logger.log(`Outcome: ${outcome}`);
 }
